@@ -1,0 +1,20 @@
+{
+    "finlprj": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-shopeasy-finlprj-144425-authRole",
+            "UnauthRoleArn": "arn:aws:iam::366684996576:role/amplify-shopeasy-finlprj-144425-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::366684996576:role/amplify-shopeasy-finlprj-144425-authRole",
+            "Region": "us-east-2",
+            "DeploymentBucketName": "amplify-shopeasy-finlprj-144425-deployment",
+            "UnauthRoleName": "amplify-shopeasy-finlprj-144425-unauthRole",
+            "StackName": "amplify-shopeasy-finlprj-144425",
+            "StackId": "arn:aws:cloudformation:us-east-2:366684996576:stack/amplify-shopeasy-finlprj-144425/7ac86e80-fc3a-11ea-bdd8-0aa2a0de9f8e",
+            "AmplifyAppId": "d31w2i0jmwc4kt"
+        },
+        "categories": {
+            "auth": {
+                "shopeasyfa92e397": {}
+            }
+        }
+    }
+}

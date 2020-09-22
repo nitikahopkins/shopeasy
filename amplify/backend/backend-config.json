@@ -1,0 +1,10 @@
+{
+	"auth": {
+		"shopeasyfa92e397": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [],
+			"customAuth": false
+		}
+	}
+}
