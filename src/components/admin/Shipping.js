@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import OutlinedInput from "@material-ui/core/OutlinedInput";
 import FormControl from "@material-ui/core/FormControl";
 import InputLabel from "@material-ui/core/InputLabel";
-import Button from "@material-ui/core/Button";
+// import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Shipping(props) {
+export default function Shipping() {
   const classes = useStyles();
 
   const [values, setValues] = React.useState({
@@ -43,7 +43,7 @@ export default function Shipping(props) {
             id="outlined-adornment-amount"
             value={values.amount}
             onChange={handleChange("amount")}
-            labelWidth={30}
+            labelWidth={130}
           />
         </FormControl>
 
@@ -54,12 +54,12 @@ export default function Shipping(props) {
           <OutlinedInput
             id="outlined-adornment-amount"
             onChange={handleChange("amount")}
-            labelWidth={30}
+            labelWidth={90}
           />
         </FormControl>
-        <Button variant="contained" color="secondary" type="submit">
+        {/* <Button variant="contained" color="secondary" type="submit">
           {props.edit ? "UPDATE" : "CREATE"}
-        </Button>
+        </Button> */}
       </form>
     </div>
   );

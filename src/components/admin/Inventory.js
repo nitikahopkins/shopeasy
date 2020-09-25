@@ -48,7 +48,7 @@ export default function Inventory() {
         <OutlinedInput
           id="outlined-adornment-amount"
           onChange={handleChange("amount")}
-          labelWidth={30}
+          labelWidth={70}
         />
       </FormControl>
     </div>

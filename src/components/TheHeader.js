@@ -32,6 +32,7 @@ const useStyles = makeStyles((theme) => ({
     display: "none",
     [theme.breakpoints.up("sm")]: {
       display: "block",
+      color: "black",
     },
   },
   search: {
@@ -39,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: theme.shape.borderRadius,
     backgroundColor: fade(theme.palette.common.black, 0.15),
     "&:hover": {
-      backgroundColor: fade(theme.palette.common.black, 0.25),
+      backgroundColor: fade(theme.palette.common.black, 0.5),
     },
     marginRight: theme.spacing(2),
     marginLeft: 0,
@@ -57,6 +58,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    color: "black",
   },
   inputRoot: {
     color: "inherit",
@@ -182,10 +184,11 @@ export default function TheHeader() {
     <div className={classes.grow}>
       <AppBar
         position="static"
-        style={{ backgroundColor: "#7d7d7d", height: "5vw" }}
+        style={{ backgroundColor: "#fbfdfe", height: "5vw" }}
       >
         <Container fixed>
           <Toolbar>
+            <img src="https://img.icons8.com/color/48/000000/easy-to-find.png" />
             <Typography className={classes.title} variant="h6" noWrap>
               ShopEasy
             </Typography>
@@ -205,15 +208,15 @@ export default function TheHeader() {
             <div className={classes.sectionDesktop}>
               <IconButton aria-label="show 4 favorite items" color="inherit">
                 <Badge badgeContent={4} color="secondary">
-                  <FavoriteIcon />
+                  <img src="https://img.icons8.com/ios/40/000000/like.png" />
                 </Badge>
               </IconButton>
               <IconButton
                 aria-label="show 17 new notifications"
                 color="inherit"
               >
-                <Badge badgeContent={17} color="secondary">
-                  <ShoppingBasketIcon />
+                <Badge badgeContent={3} color="secondary">
+                  <img src="https://img.icons8.com/wired/40/000000/shopping-bag.png" />
                 </Badge>
               </IconButton>
               {/* <IconButton
@@ -238,7 +241,25 @@ export default function TheHeader() {
                 <MoreIcon />
               </IconButton>
             </div>
-            <Button color="inherit" onClick={logInOpen}>
+            {/* <Button
+              aria-controls="simple-menu"
+              aria-haspopup="true"
+              onClick={handleClick}
+            >
+              Open Menu
+            </Button>
+            <Menu
+              id="simple-menu"
+              anchorEl={anchorEl}
+              keepMounted
+              open={Boolean(anchorEl)}
+              onClose={handleClose}
+            >
+              <MenuItem onClick={logInOpen}>Login</MenuItem>
+              <MenuItem onClick={handleClose}>My account</MenuItem>
+              <MenuItem onClick={handleClose}>Logout</MenuItem>
+            </Menu> */}
+            <Button color="black" onClick={logInOpen}>
               Login
             </Button>
             <Modal
@@ -249,7 +270,7 @@ export default function TheHeader() {
             >
               <LogIn />
             </Modal>
-            <Button color="inherit" onClick={signUpOpen}>
+            <Button color="black" onClick={signUpOpen}>
               Sign Up
             </Button>
             <Modal

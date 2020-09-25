@@ -141,7 +141,7 @@ router.get("/attribute_values", async (req, res) => {
     conn.query(`USE ${process.env.DB_NAME}`);
 
     const attributevaluesDb = await conn.query(
-      "CREATE TABLE IF NOT EXISTS `attribute_values` (`id` INT NOT NULL AUTO_INCREMENT,`value` VARCHAR(45) NOT NULL,`attribute_id` INT NOT NULL,PRIMARY KEY (`id`),UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE,UNIQUE INDEX `value_UNIQUE` (`value` ASC) VISIBLE,INDEX `attribute_id_idx` (`attribute_id` ASC) VISIBLE,CONSTRAINT `attribute_id`FOREIGN KEY (`attribute_id`)REFERENCES `attributes` (`id`)ON DELETE NO ACTION ON UPDATE NO ACTION)"
+      "CREATE TABLE IF NOT EXISTS `attribute_values` (`id` INT NOT NULL AUTO_INCREMENT,`value` VARCHAR(45) NOT NULL,`attribute_id` INT NOT NULL,PRIMARY KEY (`id`),UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE,UNIQUE INDEX `value_UNIQUE` (`value` ASC) VISIBLE,`icon_image` VARCHAR(255) NOT NULL,INDEX `attribute_id_idx` (`attribute_id` ASC) VISIBLE,CONSTRAINT `attribute_id`FOREIGN KEY (`attribute_id`)REFERENCES `attributes` (`id`)ON DELETE NO ACTION ON UPDATE NO ACTION)"
     );
     console.log(attributevaluesDb);
 

@@ -23,6 +23,7 @@ const categoriesRouter = require("./routes/categories");
 const usersRouter = require("./routes/users");
 const productsRouter = require("./routes/products");
 const attributesRouter = require("./routes/attributes");
+const attribute_valuesRouter = require("./routes/attribute_values");
 const reviewsRouter = require("./routes/reviews");
 
 app.use("/api/db", dbRouter);
@@ -30,6 +31,7 @@ app.use("/api/categories", categoriesRouter);
 app.use("/api/users", usersRouter);
 app.use("/api/products", productsRouter);
 app.use("/api/attributes", attributesRouter);
+app.use("/api/attribute_values", attribute_valuesRouter);
 app.use("/api/reviews", reviewsRouter);
 
 app.listen(PORT, () => console.log(`server is running on port${PORT}`));

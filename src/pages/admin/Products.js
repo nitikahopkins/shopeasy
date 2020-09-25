@@ -307,7 +307,7 @@ const Products = (props) => {
 
   return (
     <div className={classes.root}>
-      <Link to={`/admin/newproduct`}>Add New Product</Link>
+      <Link to={`/admin/productdetail/new`}>Add New Product</Link>
       <Paper className={classes.paper}>
         <TableContainer>
           <Table

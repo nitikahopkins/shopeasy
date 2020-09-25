@@ -121,20 +121,29 @@ export default function SignUp({ handleCloseSignUp, logInOpen }) {
   };
 
   async function handleConfirmUser() {
-    function uploadToSql() {
-      console.log("upload to mysql");
-      return axios({
-        method: "post",
-        url: "//http://localhost:4000/users",
-        data: {
+    function createUser() {
+      return axios
+        .post("localhost:4000/users", {
           firstName: signUpForm.firstname,
           lastName: signUpForm.lastname,
           email: signUpForm.email,
           password: signUpForm.password,
-        },
-        headers: { "Content-Type": "application/json" },
-      });
+        })
+        .catch((error) => console.log("error", error));
     }
+    //   console.log("upload to mysql");
+    //   return axios({
+    //     method: "post",
+    //     url: "//http://localhost:4000/users",
+    //     data: {
+    //       firstName: signUpForm.firstname,
+    //       lastName: signUpForm.lastname,
+    //       email: signUpForm.email,
+    //       password: signUpForm.password,
+    //     },
+    //     headers: { "Content-Type": "application/json" },
+    //   });
+    // }
     try {
       const response = await Auth.confirmSignUp(
         signUpForm.email,
@@ -142,7 +151,7 @@ export default function SignUp({ handleCloseSignUp, logInOpen }) {
       );
       // prompt(response);
       if (response === "SUCCESS") {
-        uploadToSql()
+        createUser()
           .then(() => {
             handleCloseSignUp();
             logInOpen();
@@ -180,7 +189,7 @@ export default function SignUp({ handleCloseSignUp, logInOpen }) {
               color="primary"
               onClick={handleCreateUser}
             >
-              Create User
+              Sign Up
             </Button>
           ) : (
             renderButton()

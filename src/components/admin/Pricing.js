@@ -35,51 +35,13 @@ export default function Pricing() {
   return (
     <div className={classes.root}>
       <FormControl fullWidth className={classes.margin} variant="outlined">
-        <InputLabel htmlFor="outlined-adornment-amount">
-          Tax Excluded Price
-        </InputLabel>
+        <InputLabel htmlFor="outlined-adornment-amount">Total Price</InputLabel>
         <OutlinedInput
           id="outlined-adornment-amount"
           value={values.amount}
           onChange={handleChange("amount")}
           startAdornment={<InputAdornment position="start">$</InputAdornment>}
-          labelWidth={150}
-        />
-      </FormControl>
-
-      <FormControl fullWidth className={classes.margin} variant="outlined">
-        <InputLabel htmlFor="outlined-adornment-amount">
-          Tax Included Price
-        </InputLabel>
-        <OutlinedInput
-          id="outlined-adornment-amount"
-          value={values.amount}
-          onChange={handleChange("amount")}
-          startAdornment={<InputAdornment position="start">$</InputAdornment>}
-          labelWidth={150}
-        />
-      </FormControl>
-
-      <FormControl fullWidth className={classes.margin} variant="outlined">
-        <InputLabel htmlFor="outlined-adornment-amount">Tax Rate</InputLabel>
-        <OutlinedInput
-          id="outlined-adornment-amount"
-          value={values.amount}
-          onChange={handleChange("amount")}
-          startAdornment={<InputAdornment position="start">$</InputAdornment>}
-          labelWidth={70}
-        />
-      </FormControl>
-      <FormControl fullWidth className={classes.margin} variant="outlined">
-        <InputLabel htmlFor="outlined-adornment-amount">
-          Compared Price
-        </InputLabel>
-        <OutlinedInput
-          id="outlined-adornment-amount"
-          value={values.amount}
-          onChange={handleChange("amount")}
-          startAdornment={<InputAdornment position="start">$</InputAdornment>}
-          labelWidth={130}
+          labelWidth={80}
         />
       </FormControl>
     </div>

@@ -10,24 +10,21 @@ import Home from "./pages/Home";
 import ProductDetail from "./components/admin/ProductDetail";
 import Categories from "./pages/admin/Categories";
 import Category from "./pages/admin/Category";
+import AdminLogIn from "./pages/admin/AdminLogin";
+import MyAccount from "./pages/MyAccount";
+import PublicRoutes from "./pages/admin/PublicRoutes";
+import PrivateRoutes from "./pages/admin/PrivateRoutes";
+import Defaut from "../src/layouts/default";
+// import TheHeader from "./components/TheHeader";
+// import TheFooter from "./components/TheFooter";
 
 function App() {
   return (
     <div>
-      <Router>
-        <Home path="/" />
-        <Admin path="admin">
-          <Products path="products" />
-          <Orders path="orders" />
-          <ProductDetail path="productdetail/:slug/edit" edit={true} />
-          <ProductDetail path="productdetail/new" />
-          <OrderDetail path="orderdetail" />
-          {/* <ProductDetail path="productdetail" /> */}
-          <Category path="categories/new" />
-          <Category path="categories/:slug/edit" edit={true} />
-          <Categories path="categories" />
-        </Admin>
-      </Router>
+      {/* <TheHeader /> */}
+      <PublicRoutes />
+      <PrivateRoutes />
+      {/* <TheFooter /> */}
     </div>
   );
 }

@@ -11,6 +11,7 @@ import ProductImages from "./ProductImages";
 import Pricing from "./Pricing";
 import Inventory from "../admin/Inventory";
 import Shipping from "../admin/Shipping";
+import Button from "@material-ui/core/Button";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -64,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ProductDetail() {
+export default function ProductDetail(props) {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -114,6 +115,9 @@ export default function ProductDetail() {
       <TabPanel value={value} index={4}>
         <Shipping />
       </TabPanel>
+      <Button variant="contained" color="secondary" type="submit">
+        {props.edit ? "UPDATE" : "CREATE"}
+      </Button>
     </div>
   );
 }
