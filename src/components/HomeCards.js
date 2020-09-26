@@ -4,6 +4,7 @@ import Grid from "@material-ui/core/Grid";
 import Container from "@material-ui/core/Container";
 import HomeCardItem from "./HomeCardItem";
 import Paper from "@material-ui/core/Paper";
+import axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,16 +22,14 @@ export default function HomeCards() {
   const classes = useStyles();
   const [items, setItems] = useState([]);
   useEffect(() => {
-    var requestOptions = {
-      method: "GET",
-      redirect: "follow",
+    const fetchData = async () => {
+      let { data } = await axios
+        .get("//localhost:4000/api/categories")
+        .catch((error) => console.log("error", error));
+      setItems(data);
     };
-
-    fetch("//localhost:4000/api/categories", requestOptions)
-      .then((response) => response.json())
-      .then((result) => setItems(result))
-      .catch((error) => console.log("error", error));
-  });
+    fetchData();
+  }, []);
 
   return (
     <div className={classes.root}>

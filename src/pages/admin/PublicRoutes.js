@@ -5,10 +5,16 @@ import { Router } from "@reach/router";
 import AdminLogIn from "./AdminLogin";
 import Home from "../../pages/Home";
 
-const PublicRoutes = ({ signIn, setSignedInForm, signInForm }) => {
+const PublicRoutes = ({ signedInUser, signIn, setSignInForm, signInForm }) => {
   return (
     <Router>
-      <Home path="/" />
+      <Home
+        path="/"
+        signIn={signIn}
+        setSignInForm={setSignInForm}
+        signInForm={signInForm}
+        signedInUser={signedInUser}
+      />
       <AdminLogIn path="adminlogin" />
     </Router>
   );

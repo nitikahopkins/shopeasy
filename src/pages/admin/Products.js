@@ -263,7 +263,7 @@ const Products = (props) => {
       setProducts(data);
     };
     fetchData();
-  }, [products]);
+  }, []);
 
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === "asc";
@@ -373,10 +373,10 @@ const Products = (props) => {
                       </TableCell>
                       <TableCell align="left">
                         <Link to={`/${row.slug}`}>View</Link>
-                        <Link to={`/admin/productdetail/${row.slug}/edit`}>
+                        <Link to={`/admin/productdetail/${row.id}/edit`}>
                           Edit
                         </Link>
-                        <Link to={`/admin/productdetail/${row.slug}`}>
+                        <Link to={`/admin/productdetail/${row.id}`}>
                           Delete
                         </Link>
                       </TableCell>

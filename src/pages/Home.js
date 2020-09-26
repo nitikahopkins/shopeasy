@@ -4,9 +4,14 @@ import HomeCards from "../components/HomeCards";
 import DefaultLayout from "../layouts/default";
 //import "../css/.css";
 
-export default function () {
+export default function ({ signedInUser, signIn, setSignInForm, signInForm }) {
   return (
-    <DefaultLayout>
+    <DefaultLayout
+      signIn={signIn}
+      setSignInForm={setSignInForm}
+      signInForm={signInForm}
+      signedInUser={signedInUser}
+    >
       <ImageSlider />
       <HomeCards />
     </DefaultLayout>

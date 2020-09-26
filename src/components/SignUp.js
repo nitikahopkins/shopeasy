@@ -123,9 +123,9 @@ export default function SignUp({ handleCloseSignUp, logInOpen }) {
   async function handleConfirmUser() {
     function createUser() {
       return axios
-        .post("localhost:4000/users", {
-          firstName: signUpForm.firstname,
-          lastName: signUpForm.lastname,
+        .post("//localhost:4000/api/users", {
+          firstname: signUpForm.firstname,
+          lastname: signUpForm.lastname,
           email: signUpForm.email,
           password: signUpForm.password,
         })

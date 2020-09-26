@@ -115,7 +115,12 @@ export default function ProductDetail(props) {
       <TabPanel value={value} index={4}>
         <Shipping />
       </TabPanel>
-      <Button variant="contained" color="secondary" type="submit">
+      <Button
+        variant="contained"
+        color="secondary"
+        type="submit"
+        style={{ marginLeft: 400 }}
+      >
         {props.edit ? "UPDATE" : "CREATE"}
       </Button>
     </div>

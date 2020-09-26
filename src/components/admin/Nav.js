@@ -181,8 +181,9 @@ export default function Nav({ signOut }) {
             </List>
             <Divider />
           </Drawer>
-          <Typography variant="h6" className={classes.title}>
-            E-Commerce
+          <img src="https://img.icons8.com/color/48/000000/easy-to-find.png" />
+          <Typography className={classes.title} variant="h6" noWrap>
+            ShopEasy
           </Typography>
           <div className={classes.search}>
             <div className={classes.searchIcon}>

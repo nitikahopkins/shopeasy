@@ -87,7 +87,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function TheHeader() {
+export default function TheHeader({
+  signIn,
+  setSignInForm,
+  signInForm,
+  signedInUser,
+}) {
   const classes = useStyles();
   const [signin, setSignInOpen] = React.useState(false);
   const [login, setLogInOpen] = React.useState(false);
@@ -98,6 +103,10 @@ export default function TheHeader() {
 
   const logInOpen = () => {
     setLogInOpen(true);
+  };
+
+  const handleLogin = () => {
+    setLogInOpen(false);
   };
 
   const handleClose = () => {
@@ -180,11 +189,13 @@ export default function TheHeader() {
     </Menu>
   );
 
+  const handleSignOut = () => {};
+
   return (
     <div className={classes.grow}>
       <AppBar
         position="static"
-        style={{ backgroundColor: "#fbfdfe", height: "5vw" }}
+        style={{ backgroundColor: "#fbfdfe", height: "3vw" }}
       >
         <Container fixed>
           <Toolbar>
@@ -253,22 +264,39 @@ export default function TheHeader() {
               anchorEl={anchorEl}
               keepMounted
               open={Boolean(anchorEl)}
-              onClose={handleClose}
+              onClose={logInOpen}
             >
               <MenuItem onClick={logInOpen}>Login</MenuItem>
               <MenuItem onClick={handleClose}>My account</MenuItem>
               <MenuItem onClick={handleClose}>Logout</MenuItem>
             </Menu> */}
-            <Button color="black" onClick={logInOpen}>
+            {/* if userSigned in show logout else show login */}
+            {signedInUser ? (
+              <Button color="black" onClick={handleSignOut}>
+                Sign Out
+              </Button>
+            ) : (
+              <Button color="black" onClick={logInOpen}>
+                Login
+              </Button>
+            )}
+            {/* <Button color="black" onClick={logInOpen}>
               Login
-            </Button>
+            </Button> */}
+            {/* <Button color="black" onClick={handleSignOut}>
+              Sign Out
+            </Button> */}
             <Modal
               open={login}
               onClose={handleClose}
               aria-labelledby="simple-modal-title"
               aria-describedby="simple-modal-description"
             >
-              <LogIn />
+              <LogIn
+                signIn={signIn}
+                setSignInForm={setSignInForm}
+                signInForm={signInForm}
+              />
             </Modal>
             <Button color="black" onClick={signUpOpen}>
               Sign Up
@@ -279,7 +307,7 @@ export default function TheHeader() {
               aria-labelledby="simple-modal-title"
               aria-describedby="simple-modal-description"
             >
-              <SignUp />
+              <SignUp handleCloseSignUp={handleClose} logInOpen={logInOpen} />
             </Modal>
           </Toolbar>
         </Container>

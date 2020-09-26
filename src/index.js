@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import Amplify from "aws-amplify";
 import awsexports from "./aws-exports";
+//import CORS from "cors";
 Amplify.configure(awsexports);
 
 ReactDOM.render(

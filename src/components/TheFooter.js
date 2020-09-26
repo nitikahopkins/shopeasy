@@ -12,6 +12,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.common.black,
     padding: theme.spacing(10, 0),
     opacity: 0.5,
+    marginTop: 100,
   },
   paper: {
     padding: theme.spacing(2),
@@ -39,7 +40,7 @@ export default function TheFooter() {
     <div className={classes.root}>
       <Container fixed>
         <Grid container>
-          <Grid item xs={12} sm={3}>
+          <Grid item xs={8} sm={3}>
             <Link
               href="https://facebook.com"
               target="_blank"
@@ -62,7 +63,7 @@ export default function TheFooter() {
               <InstagramIcon className={classes.icons} />
             </Link>
           </Grid>
-          <Grid item xs={12} sm={9}>
+          <Grid item xs={8} sm={9}>
             Footer Menu
           </Grid>
         </Grid>

@@ -228,12 +228,11 @@ const Categories = (props) => {
     const fetchData = async () => {
       let { data } = await axios
         .get("//localhost:4000/api/categories")
-
         .catch((error) => console.log("error", error));
       setItems(data);
     };
     fetchData();
-  }, [items]);
+  }, []);
 
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === "asc";

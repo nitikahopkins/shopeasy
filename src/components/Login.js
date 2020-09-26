@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function LogIn() {
+export default function LogIn({ signIn, setSignInForm, signInForm }) {
   const classes = useStyles();
 
   return (
@@ -67,6 +67,9 @@ export default function LogIn() {
           <Grid container spacing={2}>
             <Grid item xs={12}>
               <TextField
+                onChange={(e) =>
+                  setSignInForm({ ...signInForm, username: e.target.value })
+                }
                 variant="outlined"
                 required
                 fullWidth
@@ -78,6 +81,9 @@ export default function LogIn() {
             </Grid>
             <Grid item xs={12}>
               <TextField
+                onChange={(e) =>
+                  setSignInForm({ ...signInForm, password: e.target.value })
+                }
                 variant="outlined"
                 required
                 fullWidth
@@ -95,6 +101,7 @@ export default function LogIn() {
             variant="contained"
             color="primary"
             className={classes.submit}
+            onClick={signIn}
           >
             Log In
           </Button>
